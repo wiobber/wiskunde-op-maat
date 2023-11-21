@@ -9,20 +9,15 @@ jobs:
           texlive_version: 2022
           run: |
             date
-            pwd
-            id
             ls -al 
             env
             kpsewhich   --show-path=tex
-            date
             type pdflatex
-            ls -al $HOME
             ldd xake || echo NOK
             mkdir -p /root/texmf/tex/latex/ximeraLatex 
             cp .ximera/* /root/texmf/tex/latex/ximeraLatex
             cd complexe_getallen
             pdflatex cmplx_norm.tex || echo NOK
-            ./xake compilePdf complexe_getallen/cmplx_norm.tex
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
         with:
