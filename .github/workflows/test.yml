@@ -20,5 +20,13 @@ jobs:
             ldd xake || echo NOK
             mkdir -p /root/texmf/tex/latex/ximeraLatex 
             cp .ximera/* /root/texmf/tex/latex/ximeraLatex
-            pdflatex complexe_getallen/cmplx_norm.tex || echo NOK
+            cd complexe_getallen
+            pdflatex cmplx_norm.tex || echo NOK
             ./xake compilePdf complexe_getallen/cmplx_norm.tex
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v3
+        with:
+              name: pdfs
+              path: |
+                **/*.pdf
+                **/*.log
