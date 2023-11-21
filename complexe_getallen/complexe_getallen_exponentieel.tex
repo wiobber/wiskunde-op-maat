@@ -1,0 +1,114 @@
+\documentclass{ximera}
+\input{../preamble}
+\addPrintStyle{..}
+\begin{document}
+	% Start specifieke settings:    
+	\author{Zomercursus KU Leuven}
+	\xmtitle{De exponentiële schrijfwijze van complexe getallen}{}
+	% Start inhoud ximera 
+	
+	\label{xim:complexe_getallen_exponentieel}
+
+%Een complex getal $z=a+bi$ kan worden voorgesteld in goniometrische vorm als $r (\cos \theta + i \sin \theta )$. Het is een merkwaardig feit dat we deze uitdrukking verder kunnen herschrijven als een complexe macht van het getal $e$:
+We definiëren een uitbreiding van de exponentiële functie tot de verzameling van de complexe getallen.
+
+\begin{definition}
+Als $z=x+iy \in \C$ dan is $e^z$ het complexe getal 
+$$
+\important{e^z = e^{x+iy} \perdef  e^x (\cos y + i \sin y)}
+$$ 
+\end{definition}
+
+Dit is inderdaad een uitbreiding want voor $z \in \R$ is $e^z$ de reeds gekende exponentiële functie. 
+
+Met behulp van de somformules van sinus en cosinus kan je ook aantonen dat met deze definitie de gekende eigenschap van de reële exponentiële functie $e^{x+y}=e^x e^y$ voor $x,y \in \R$ blijft gelden in $\C$.
+
+\begin{proposition}
+    Voor $z_1,z_2 \in \C$ geldt $$e^{z_1+z_2}=e^{z1} e^{z2}$$
+\end{proposition}
+
+\begin{remark}
+Omdat met $z=x+iy$ en $e^z = e^x (\cos y + i \sin y)$ in de vorm $r (\cos \theta + i \sin \theta )$ staat,
+geldt voor de modulus en het argument van $e^z$ dat 
+    \important{|e^z| = e^x} en 
+    \important{\text{arg } e^z = y + 2k \pi} met $k \in \Z$
+\end{remark}
+
+\begin{exercise} Geef modulus en argument van $e^{iz}$ met $z=x+iy$.
+\begin{oplossing}
+Omdat $iz=ix+i^2y = -y + ix$ is $e^{iz}= e^{-y+ix} = e^{-y} (\cos x +i \sin x)$. 
+
+En $e^{-y} (\cos x +i \sin x)$ is van de vorm $r (\cos \theta + i \sin \theta )$, dus
+ $|e^{iz}| = e^{-y}$ en  arg $e^{iz} = x + 2k \pi$ met $k \in \Z$.
+\end{oplossing}
+\end{exercise}
+
+Een onmiddellijk gevolg van deze definitie is wat dikwijls de mooiste wiskundige formule wordt genoemd: een erg merkwaardig verband tussen de fundamentele grootheden $e,\pi,i$ en $ -1$. 
+\begin{proposition}
+    \important{e^{i \pi} = -1}
+\end{proposition}
+
+
+Vermits $e^{iy} = \cos y + i \sin y$, voor $y \in \R$, kunnen we een complex getal in goniometrische vorm
+$\displaystyle z = r (\cos \theta + i \sin \theta )$ ook schrijven als $z= r e^{i \theta}$. We noemen dit de \textbf{exponentiële schrijfwijze}.
+
+\begin{remark}\nl
+    Twee complexe getallen in exponentiële schrijfwijze zijn gelijk aan elkaar als ze dezelfde modulus hebben, en hun argument gelijk is op een veelvoud van $2\pi$ na.
+\end{remark}
+
+
+\begin{exercise} Schrijf $\ds 2 e^{i \frac{2 \pi}{3}}$ in de vorm $x+iy.
+\quad \displaystyle 2 e^{i \frac{2 \pi}{3}} =\answer[onlineshowanswerbutton]{-1 + i \sqrt 3 } $
+\begin{hint} 	$\displaystyle 2 e^{i \frac{2 \pi}{3}}  $ is een complex getal geschreven in exponentiële schrijfwijze $r e^{i \theta}$. Gebruik  $r e^{i \theta}=r (\cos \theta + i \sin \theta ) $ om over te gaan naar de goniometrische schrijfwijze en reken dan de $\cos$ en $\sin$ uit om over te gaan naar de cartesische schrijfwijze $x+iy$. \end{hint}
+\end{exercise}
+Omdat $e^{z_1+z_2}= e^{z_1} \cdot e^{z_2}$ voor $z_1, z_2 \in \C$, wordt het  vermenigvuldigen van twee complexe getallen nog eenvoudiger in de exponentiële schrijfwijze.
+\begin{proposition}
+Als $z_1=r_1 e^{i \theta_1} $ en $z_2 = r_2 e^{i \theta_2 }$ twee complexe getallen zijn, dan is
+\begin{align*}
+    z_1\cdot z_2 &= r_1 e^{i \theta_1} \cdot r_2 e^{i
+        \theta_2}\\
+    &= r_1 r_2 e^{i(\theta_1 + \theta_2)} \, ,
+\end{align*}
+
+en als $z=r e^{i \theta}$, dan is voor $n \in \N$ (formule van De Moivre)
+
+$$z^n = (r e^{i \theta})^n = r^n e^{i n \theta}$$
+\end{proposition}
+
+\begin{exercise}[Vierkantswortels]
+Bereken alle oplossingen van $z^2 = 1 - i$, met $z\in \C$.
+\begin{oplossing}
+We schrijven beide leden in exponentiële vorm. De onbekende $z$ schrijven we als $z = r e^{i \theta}$.
+
+Het linkerlid van de vergelijking wordt dan volgens de formule van De Moivre
+$$z^2 = r^2 e^{i 2 \theta}.$$ 
+Voor het rechterlid $1-i$ geldt
+\[ |1-i| = \sqrt{2}, \qquad \arg (1-i) = - \frac{\pi}{4}, \]
+zodat
+\[ 1-i = \sqrt{2} e^{-\frac{\pi}{4} i}. \]
+
+
+De vergelijking $z^2 = 1-i$ in de onbekende $z$ wordt zo een vergelijking in de onbekenden $r$ en $\theta$:
+$$r^2 e^{i 2 \theta} = \sqrt{2} e^{-\frac{\pi}{4} i}.$$ 
+Twee complexe getallen in exponentiële vorm zijn gelijk aan elkaar als ze dezelfde modulus hebben, en hun argument gelijk is op een veelvoud van $2 \pi$ na. Hieruit volgt:
+\[ 
+r^2 = \sqrt{2} \quad \text{met} \quad r \in \Rplus \qquad \text{en} \qquad 2 \theta = - \frac{\pi}{4} + 2 k \pi \quad \text{met} \quad k \in \Z. 
+\]
+Dus $r= 2^{1/4}$ en $\theta = - \frac{\pi}{8} + k \pi$, $k \in \Z$. We hebben de onbekenden $r$ en $\theta$ dus gevonden.
+
+Voor $k=0$ is
+$\theta = - \frac{\pi}{8}$ en voor $k=1$ is $\theta = -
+\frac{\pi}{8} + \pi = \frac{7\pi}{8}$. Voor alle andere waarden van $k$ krijgen we één van beide hoeken op een veelvoud van $2 \pi$ na. Er zijn dus slechts twee verschillende oplossingen 
+
+\[ 
+    z_1 = 2^{1/4} e^{-\frac{\pi}{8} i} 
+\qquad \text{en} \qquad
+    z_2 = 2^{1/4} e^{\frac{7\pi}{8} i}  
+\]
+\end{oplossing}
+\end{exercise}
+
+
+
+\end{document}
+

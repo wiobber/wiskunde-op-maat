@@ -1,0 +1,215 @@
+\documentclass{ximera}
+\input{../preamble}
+\addPrintStyle{..}
+
+\begin{document}
+    \author{Kwinten Obbels}
+    \xmtitle{Intro: een nieuwe soort getallen?}{}
+
+Doorheen de geschiedenis van de wiskunde hebben nieuwe getallen een belangrijke rol gespeeld.
+Uit het tellen komen de meest eenvoudige getallen voort: 1 appel, 2 appels, 3 appels, ... 
+Dit zijn de natuurlijke getallen, die genoteerd worden met de letter \( \N = \{0, 1, 2, 3, 4, 5, 6, ...\} \) . 
+
+%TODO insert triviaal venndiagram
+
+%TODO insert triviale visuele voorstelling 
+
+
+
+Met deze getallen kan je op verschillende manieren 'nieuwe getallen' maken. 
+Door negatieve getallen toe te voegen wordt de verzameling getallen groter.  
+Dit zijn de gehele getallen, die genoteerd worden met de letter  \( \Z = \{0, +1,-1,+2,-2,+3,-3,+4,-4,+5,-5, ... \} \) . 
+insert vendiagram (klein)
+
+insert getallenas 
+
+Wiskundigen hebben verschillende redenen om nieuwe getallen in te voeren. 
+De vergelijking \(x + 7 = 0\) heeft bijvoorbeeld geen oplossing in de natuurlijke getallen.
+Zonder het gehele getal \(x = -7\) kan je deze vergelijking niet oplossen. 
+
+%of: enkel het gehele getal x = -7 is een oplossing. 
+
+
+\begin{denkvraag*}{}
+    De Oude Grieken hebben negatieve getallen nooit aanvaard. 
+    Volgens hun stelt een getal altijd een positieve hoeveelheid of een lengte voor. 
+    \textbf{Ben jij akkoord met de Oude Grieken?}
+\begin{itemize}
+    \item Bestaan negatieve getallen wel 'écht'? 
+    \item Je hebt 1 appel, 2 appels, 3 appels, ... Maar wat is '-1 appel'? 
+    \item Aan welke vereisten moet iets voldoen voordat jij het 'een getal' zou willen noemen? 
+\end{itemize}
+\end{denkvraag*}
+
+Met behulp van breuken kunnen de gehele getallen \(\Z \) verder uitgebreid worden. 
+Dit zijn de rationale getallen die genoteerd worden met de letter \( \Q  = \{\frac{z}{n} | z \in \Z, n \in \Nnul \}\).
+Voorbeelden zijn \(\frac{2}{3}\), \(\frac{-4}{3}\), \(\frac{1}{1}\) en \(\frac{0}{3}\). 
+Ook rationale getallen zijn nuttig om vergelijkingen op te lossen. 
+De vergelijking \(3x + 4 = 0\) heeft immers geen oplossing in de gehele getallen \( \Z \).
+Zonder het rationale getal \(x = \frac{-4}{3}\) is deze vergelijking niet oplosbaar. 
+
+%TODO insert venndiagram (klein)
+
+%TODO insert gepunt lijnstuk
+
+Volgens de Oude Grieken zijn dit de enige positieve getallen. 
+Toch merk je al snel dat je nog niet 'genoeg' getallen hebt. 
+De stelling van Pythagoras leert ons dat de schuine zijde in onderstaande rechthoekige driehoek lengte \( \sqrt{2}\) heeft. 
+Met een kort bewijs (online pdf; Ximera) kan je aantonen dat \(\sqrt{2}\) niet in de verzameling rationale getallen zit (d.w.z dat \(\sqrt{2}\)\footnote{\(\sqrt{2} = 1.4142135623730950488016887242096980785696718753769480731766797379907324784621070388503875343276...\)} niet te schrijven is als een breuk!). 
+Deze getallen worden irrationaal genoemd en hebben altijd oneindig veel cijfers na de komma.
+
+Enkele voorbeelden zijn \( 
+\pi \footnote{ \(\pi = 3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342117... \)}
+\frac{\sqrt{2}}{2} 
+\pi^2
+\). 
+In de gepunte rechten van \(\Q\) zitten er dus gaten bij alle irrationale getallen. 
+
+insert driehoek wortel 2 
+
+insert gepunte rechte met een gat bij pi en wortel 2. (duidelijk maken in de tikzpicture)
+
+
+% (link: https://apod.nasa.gov/htmltest/gifcity/sqrt2.1mil   eerste miljoen cijfers van wortel 2 )
+
+Ook irrationale getallen zijn soms nodig om vergelijkingen op te lossen. 
+Zo heeft de vergelijking \(x^2 - 2 = 0\) geen oplossing in de rationale getallen \( \Q \).
+Zonder het irrationale getal \(x = \sqrt{2} \) kan je deze vergelijking niet oplossen.
+Als de irrationale getallen worden toegevoegd aan de rationale getallen \(\Q\), bekom je de reële getallen \(\R\). 
+De reële getallen vormen een rechte waarbij met elk punt met een reëel getal overeenkomt. 
+
+
+%TODO insert venndiagram (middelgroot)
+
+%TODO insert reëele rechte 
+
+\begin{denkvraag*}{} Bestaan er volgens jou nog andere soorten getallen? 
+\begin{itemize}
+    \item Bestaan er volgens jou nog andere soorten getallen? 
+    \item Zijn er vergelijkingen die je niet kan oplossen met de reële getallen \( \R \) ?
+    \item Zou je de reële rechte nog kunnen 'uitbreiden'? 
+\end{itemize}
+\end{denkvraag*}
+
+\xmsection{Op zoek naar nieuwe getallen: een complexe geschiedenis...}
+
+\begin{exercise}{Heron van Alexandrië}
+
+    De Griekse wiskundige Heron van Alexandrië zocht in de eerste eeuw v. Chr de hoogte \(h\) van een afgeplatte piramide met basis b, afgeplatte top a en schuine ribbe c. 
+
+    \textbf{a)} 
+    Toon met behulp van de stelling van Pythagoras aan dat de hoogte h wordt gegeven door: \[h = \sqrt{c^2 - {\frac{b-a}{2}}^2}\]. 
+
+    \textbf{b)} 
+    Heron van Alexandrië berekende de hoogte van de afgeplatte piramide met volgende afmetingen: b = 28, a = 4 en c = 15. 
+    \textbf{Ga Heron van Alexandrië achterna en voer deze berekening uit, valt er je iets op aan het eindresultaat? }
+
+\end{exercise}
+
+% TODO foto invoegen pyramide 
+% TODO foto invoegen Heron van Alexandrië
+
+
+\begin{denkvraag*}{}
+\begin{itemize}
+    \item Wat zou \(\sqrt{-4}\) kunnen betekenen? 
+    \item Ken je een getal dat als kwadraat -4 heeft? 
+    \item Zijn er vergelijkingen die \(\sqrt{-4}\) als oplossing hebben? 
+\end{itemize}
+\end{denkvraag*}
+
+Heron van Alexandrië schreef als oplossing de positieve wortel \(\sqrt{63}\) in zijn schrift. 
+Waarom hij dat deed is onduidelijk.
+De meest voor de hand liggende verklaring is dat hij deze negatieve wortel niet kon aanvaarden. 
+
+In de 9de eeuw schreefe Indiase wiskundige Bhaskar Acharij in een werk over de algebra: 
+
+\begin{quote}
+    'if one asks me what the root is of -9, I say the question is absurd'. 
+\end{quote}
+
+%TODO originale bron invoegen
+%TODO nederlandse vertaling invoegen 
+
+%In deze periode zijn de negatieve getallen ontwikkeld door wiskundige in Indië. 
+%Op dat moment vond men dat het niet mogelijk is om wortels te trekken uit negatieve getallen. 
+
+Het duurde tot de 16de eeuw voordat negatieve wortels opnieuw opdoken in de wiskunde, op het moment dat de Italiaanse wiskunde Cardano het volgende probleem probeerde op te lossen: 
+
+%moet nog herschreven worden 
+%simpelle oef die wel werkt invoegen eventueel? 
+
+
+% TODO foto cardona invoegen 
+
+\begin{exercise}{Gerolamo Cardano}
+
+    Zoek 2 getallen waarvan de som gelijk is aan 10; en het product gelijk is aan 40.
+    In symbolen is dit het stelsel \( 
+        \begin{cases}
+            x + y = 10 \\
+            xy = 40
+        \end{cases} \)
+    waarbij \(x\) en \(y\) getallen zijn. \newline
+    Cardano vond een oplossing voor dit probleem omdat hij rekende met negatieve wortels. \newline
+    \textbf{Durf jij Cardono achterna om dit probleem op te lossen?}
+\end{exercise}
+
+
+Over zijn berekening schrijft Cardano zelf het volgende: 
+
+\begin{quote}
+    “Putting aside the mental tortures involved, 
+    multiply \(5 + \sqrt{-15}\) and \(5 - \sqrt{-15}\) ... 
+    Hence this product is 40... 
+    This is truly sophisticated.”
+\end{quote}
+
+%TODO originale bron invoegen
+%TODO nederlandse vertaling invoegen 
+
+
+
+\begin{remark}
+    Cardano heeft goede redenen om zijn negatieve wortels te omschrijven als 'mentale martelingen'.
+    De rekenregel \(\sqrt{\square \square} = \sqrt{\square}\sqrt{\square}\) zorgt meteen voor een tegenstrijdigheid: 
+    %underbrackets met -1 invoegen 
+    \begin{center} 
+        \textbf{We schrijven \(\sqrt{\square}\) enkel voor \( \square \in \R \)}. 
+    \end{center}
+\end{remark}
+
+
+Om deze tegenstrijdige rekenregels te vermijden, voerde Euler een symbool \(i\) met als eigenschap dat \textbf{\(i^2 = -1\)}.
+Het gebruik van negatieve wortels kan nu altijd vermeden worden: 
+
+\[ \sqrt{-9} = \sqrt{-1 \cdot 9} = \sqrt{-1} \sqrt{9} = 3i  \]
+% TODO de gelijkheid stappen schrijven in het klein? i^2 = -1
+
+
+%Het heeft vele eeuwen geduurd voordat wiskundigen deze nieuwe getallen volledig begrepen hebben. Dus als je het na deze inleiding nog niet helemaal begrijpt is dat volledig normaal \text{;)}.  
+
+René Descartes, bekend van zijn cartesiaans assenstelsel,  is deze getallen tegengekomen bij het oplossen van meetkundige problemen. Hij schreef hierover: 
+
+\begin{quote}
+    'on le saurair les rendre autre que imaginaire' 
+\end{quote}
+\begin{quote}
+    'We kunnen ze niet anders dan denkbeeldig noemen'.
+\end{quote}
+%TODO originale bron invoegen
+%TODO nederlandse vertaling invoegen 
+
+Hierdoor is men deze nieuwe getallen 'imaginaire getallen' of 'complexe getallen' gaan noemen. Om deze getallen beter te begrijpen zijn wiskundigen ze in een vlak beginnen voorstellen. Op de reële rechte stelt elk punt een reëel getal voor. In het \textbf{complexe vlak} zal elk punt een complex getal voorstellen. 
+
+De Ierse wiskundige William Rowan Hamilton schreef hierover in 1837 het volgende: 
+
+\begin{quote}
+    “...be concisely denoted as follows, \(\sqrt{-1} = (0, 1)\). In the theory of single numbers, the symbol \(\sqrt{-1}\) is absurd, and denotes an impossible extraction, or a merely imaginary number; but in the theory of couples, the same symbol \(\sqrt{-1}\) is significant, and denotes a possible extraction, or a real couple, namely the principal square-root of the couple \((-1,0)\).”
+\end{quote}
+
+%TODO nederlandse vertaling invoegen 
+
+
+Uit het citaat blijkt dat in het vlak deze nieuwe getallen veel minder 'denkbeeldig' zijn dan wiskundigen lang gedacht hebben. Het nieuwe symbool \(i\) waarvoor \(i^2 = -1\),  blijkt simpelweg het punt \((0,1)\) te zijn...
+\end{document}

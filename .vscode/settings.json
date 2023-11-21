@@ -1,0 +1,59 @@
+{
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "build.sh",
+            "command": "build.sh",
+            "args": [
+                "compilePdf",
+                "%RELATIVE_DIR%/%DOCFILE_EXT%"
+            ],
+            "env": {
+                "PATH": "%WORKSPACE_FOLDER%:/bin/:usr/bin/",
+                "MOUNTDIR": "%WORKSPACE_FOLDER%" 
+            }
+        },
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "pdflatex 🔃",
+            "tools": [
+                "build.sh"
+            ]
+        },
+    ],
+    "explorer.excludeGitIgnore": true,
+    "cSpell.language": "nl,en",
+    "cSpell.words": [
+        "eerstegraadsfunctie",
+        "tweedegraadsongelijkheid",
+        "veeltermfunctie",
+        "veeltermfuncties",
+        "veeltermongelijkheid",
+        "veeltermvergelijking",
+        "vetdruppels"
+    ],
+}

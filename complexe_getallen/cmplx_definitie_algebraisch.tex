@@ -1,0 +1,359 @@
+\documentclass{ximera}
+\handouttrue
+\input{../preamble}
+\addPrintStyle{..}
+\begin{document}
+	\author{Wim Obbels}
+	\xmtitle{Complexe getallen (algebraïsch)}{}
+	\label{xim:cmplx_definitie_algebraisch}
+    
+%Met een nieuwe symbool $i$  kunnen we de complexe getallen definiëren.
+% Daardoor ontstaan ook combinaties als $2i$ en $i+1$, die we \textbf{complexe getallen} noemen, niet omdat ze ingewikkeld zijn, maar omdat ze \textit{samengesteld} zijn uit een gewoon reëel getal en een veelvoud van het nieuwe getal $i$.
+
+
+\begin{definition}[Complex getal]\label{def:complex_getal}\label{def:reeel_deel}\label{def:imaginair_deel}\nl
+	
+    Een \textbf{complex getal} is een uitdrukking van de vorm \(a+bi\), met \(a,b \in \R\).
+    \\
+    Het symbool \(i\) waarvoor \( \important{i^2=-1}\) noemen we de \textbf{imaginaire eenheid}.
+    
+De \textbf{verzameling complexe getallen} noteren we met \(\important{\C=\{a+bi \;|\; a,b\in\R;\; i^2=-1\}} \).
+
+Voor een complex getal $z=a+bi$ noemen we: \\
+\begin{tabular}{@{\quad}l@{ }ll}    
+    & $a=\Re(a+bi)=\Re(z)$ het \textbf{reëel deel}  \\
+    & $b=\Im(a+bi)=\Im(z)$ het \textbf{imaginair deel}.
+\end{tabular}
+
+\begin{tabular}{@{}l@{ }ll}    
+    Als $\Im(z) = b=0$, dan is $z=a$ & een \textbf{(zuiver) re\"eel getal}  \\%& en $\R$ is dus een deelverzameling van $\C$,\\
+    Als $\Re(z) = a=0$, dan is $z=bi$ & een \textbf{(zuiver) imaginair getal}.
+\end{tabular}
+    
+    
+Twee complexe getallen zijn \textbf{gelijk} indien ze  dezelfde reële en imaginaire delen hebben:
+\vspace{-0.35cm}
+\begin{center}
+    \begin{tabular}{rcl}
+        \(z = w\) &\(\iff\)& \(\Re(z)=\Re(w) \Ten \Im(z)=\Im(w)\) \\    
+        \(a+bi = c + di \)  &\(\iff\)& \(a = c \Ten b = d \)\\   
+    \end{tabular}
+\end{center}
+
+\end{definition}
+
+%\begin{expandable}{remark}{Notatie}
+    Complexe getallen worden dikwijls met de letters \(z\) of \(w\) genoteerd, net zoals we voor een natuurlijk getal \(n\) gebruiken of voor functies \(f, g \) en \(h\).
+%\end{expandable}
+
+\begin{expandable}{remark}{Gelijkheid van complexe getallen}
+    Het kan overbodig lijken om te vermelden wanneer twee complexe getallen \(z = a+bi\) en \(w = c+di\) aan elkaar gelijk zijn. Merk op dat een gelijkaardige regel voor breuken \textit{niet} geldt: als $\frac{a}{b} = \frac{c}{d}$ gelijk zijn hoeft niet te gelden dat \(a = c\) en \(b = d\). De breuken $\frac{1}{2}$ en $\frac{3}{6}$ zijn immers gelijk, maar hun tellers en noemers toch zijn verschillend. 
+\end{expandable}
+
+% \begin{example}{Enkele complexe getallen met hun imaginair en reëel deel.}
+%     \[
+%     \begin{array}{c@{\quad}|@{\quad}r@{\quad}r}
+%         z & \Re(z) & \Im(z) \\\hline
+%         2+3i & 2 & \answer{3} 
+%         \\
+%         5-6i &\answer{5} & \answer{-6} 
+%     \end{array}
+%     \qquad
+%     \begin{array}{c@{\quad}|@{\quad}r@{\quad}r}
+%         z & \Re(z) & \Im(z) \\\hline
+%         42 & 42 & 0 
+%         \\
+%         42i & 0 & 42
+%     \end{array}
+%     \qquad
+%     \begin{array}{c@{\quad}|@{\quad}r@{\quad}r}
+%         z & \Re(z) & \Im(z) \\\hline
+%         1+i\sqrt{2} & 1 & \sqrt{2}
+%         \\
+%         1+\pi & 1+\pi & 0 
+%         \\
+%     \end{array}
+%     \]
+% De getallen $42$ en $1+\pi$ zijn zuiver reële getallen. Het getal $42i$ is een zuiver imaginair getal. 
+% % \\
+% \end{example}
+
+\begin{example} Volgende uitdrukkingen zijn allemaal complexe getallen:
+    $$
+    \def\arraystretch{1.5}
+    \begin{array}{c|rr c lll}
+        z & \Re(z) & \Im(z) \\\hline
+        2+3i & 2 & \answer{3} 
+        \\
+        5-6i &\answer{5} & \answer{-6} 
+        \\
+        1+i\sqrt{2} & 1 & \sqrt{2}
+        \\
+        \dfrac{1-i\sqrt{5}}{2}  & \dfrac{1}{2} & -\dfrac{\sqrt{5}}{2}
+        \\
+    \end{array}
+    \qquad\qquad
+    \begin{array}{c|rr c lll}
+        z & \Re(z) & \Im(z) \\\hline
+        1+\pi & 1+\pi & 0
+        \\
+        42 & \answer{42} & 0
+        \\
+        42i & \answer{0} & \answer{42} 
+        \\
+        5i + 7 & \answer{7} & \answer{5} 
+        \\
+        2+ 5i + \pi & \answer{2+\pi} & \answer{5} 
+        \\
+    \end{array}
+    $$
+    De getallen $42$ en $1+\pi$ zijn zuiver reële getallen, $42i$ is een zuiver imaginair getal. 
+    \\
+    \end{example}
+
+\begin{exercise}{Bepaal het imaginair en reëel deel van de volgende complexe getallen}
+\begin{xmmulticols}[4]
+\begin{question}
+    \(8+3i\)
+    \begin{oplossing} \(\Re(8+3i) = 8\) en \(\Im(8+3i) = 3\)\end{oplossing}
+
+\end{question}
+
+\begin{question}
+    \(\sqrt{2} + \sqrt{2}i\)
+\end{question}
+\begin{question}
+    \(7i\)
+\end{question}
+\begin{question}
+    \(\frac{1+2i}{3}\)
+\end{question}
+\begin{question}
+    \(1\)
+\end{question}
+\begin{question}
+\(i\)
+\end{question}
+\begin{question}
+    \(\frac{9+3i}{3}\)
+\end{question}
+\begin{question}
+    \(\pi + e + i \)
+\end{question}
+\begin{question}
+    \(0\)
+\end{question}
+\begin{question}
+    \(\frac{\sqrt{5} + \sqrt{5}i }{\sqrt{5}}\)
+\end{question}
+
+\end{xmmulticols}
+
+\end{exercise}
+
+\begin{exercise}{Vereenvoudig.}
+\begin{xmmulticols}[6]
+\begin{question}
+    \(i^2\)
+\end{question}
+\begin{question}
+    \(i^5\)
+\end{question}
+\begin{question}
+    \(-i^3\)
+\end{question}
+\begin{question}
+    \(i^4\)
+\end{question}
+\begin{question}
+    \(-i^4\)
+\end{question}
+\begin{question}
+    \(i^{10}\)
+\end{question}
+\begin{question}
+    \(i^{11}\)
+\end{question}
+\begin{question}
+    \(-i^{12}\)
+\end{question}
+\begin{question}
+    \(-i^2\)
+\end{question}
+\begin{question}
+    \(-i^3\)
+\end{question}
+\end{xmmulticols}
+\end{exercise}
+
+% \begin{exercise}{Ga na of devolgende complexe getallen aan elkaar gelijk zijn.}
+% \begin{xmmulticols}
+
+% \begin{question}
+%     \(\) en \(\)
+% \end{question}
+% \begin{question}
+%     \(\) en \(\)
+% \end{question}
+% \begin{question}
+%     \(\) en \(\)
+% \end{question}
+% \begin{question}
+%     \(\) en \(\)
+% \end{question}
+% \begin{question}
+%     \(\) en \(\)
+% \end{question}
+% \begin{question}
+%     \(\) en \(\)
+% \end{question}
+% \begin{question}
+%     \(\) en \(\)
+% \end{question}
+% \begin{question}
+%     \(\) en \(\)
+% \end{question}
+% \begin{question}
+%     \(\) en \(\)
+% \end{question}
+% \begin{question}
+%     \(\) en \(\)
+% \end{question}
+% \begin{question}
+%     \(\) en \(\)
+% \end{question}
+% \end{xmmulticols}
+% \end{exercise}
+
+
+% \begin{example} De volgende uitdrukkingen zijn complexe getallen:
+%     $$
+% \def\arraystretch{1.5}
+% \begin{array}{c|cc@{\qquad} @{\qquad}c|@{\qquad}cc@{\qquad} @{\qquad}c@{\qquad}cc}
+%      & \Re(z) & \Im(z) 
+%     &  & \Re(z) & \Im(z) 
+%     &  & \Re(z) & \Im(z) 
+%     \\[2mm]\hline
+%      2+3i & 2 & \answer{3} 
+%     &17 & \answer{17} & 0
+%     &i\sqrt{5} + 3  & 3 & {\sqrt{5}}
+%     \\
+%     1+\sqrt{2}i & 1 & \sqrt{2}
+%     &17i & \answer{0} & \answer{17} 
+%     &1+\pi & 1+\pi & 0
+%     \\
+% \end{array}
+% $$
+% De getallen $42$ en $1+\pi$ zijn zuiver reële getallen.\\
+% Het getal $42i$ is een zuiver imaginair getal. 
+% % \\
+% Van het complex getal $2+3i$ is het reëel deel $2$ en het imaginair deel $3$. 
+%\end{example}
+
+    % \begin{example} De volgende uitdrukkingen zijn complexe getallen:
+        %     $$
+% \def\arraystretch{1.5}
+% \begin{array}{c@{\quad}|@{\quad}r@{\quad}r}
+%     z & \Re(z) & \Im(z) \\\hline
+%     2+3i & 2 & \answer{3} 
+%     \\
+%     1+\sqrt{2}i & 1 & \sqrt{2}
+%     \\
+%     17 & \answer{17} & 0
+%     \\
+%     \dfrac{1-i\sqrt{5}}{2}  & \dfrac{1}{2} & -\dfrac{\sqrt{5}}{2}
+%     \\
+%     17i & \answer{0} & \answer{17} 
+%     \\
+%     1+\pi & 1+\pi & 0
+%     \\
+% \end{array}
+% $$
+% De getallen $42$ en $1+\pi$ zijn zuiver reële getallen.\\
+% Het getal $42i$ is een zuiver imaginair getal. 
+% % \\
+% % Van het complex getal $2+3i$ is het reëel deel $2$ en het imaginair deel $3$. 
+% \end{example}
+
+
+% VERSIE PAPA 
+
+
+% \begin{example} De volgende uitdrukkingen zijn complexe getallen:
+%     $$
+% \def\arraystretch{1.5}
+% \begin{array}{c@{\quad}|@{\quad}r@{\quad}r}
+%     z & \Re(z) & \Im(z) \\\hline
+%     2+3i & 2 & \answer{3} 
+%     \\
+%     5-6i &\answer{5} & \answer{-6} 
+%     \\
+%     1+i\sqrt{2} & 1 & \sqrt{2}
+%     \\
+%     \dfrac{1-i\sqrt{5}}{2}  & \dfrac{1}{2} & -\dfrac{\sqrt{5}}{2}
+%     \\
+% \end{array}
+% \qquad\qquad
+% \begin{array}{c@{\quad}|@{\quad}r@{\quad}r}
+%     z & \Re(z) & \Im(z) \\\hline
+%     1+\pi & 1+\pi & 0
+%     \\
+%     42 & \answer{42} & 0
+%     \\
+%     42i & \answer{0} & \answer{42} 
+%     \\
+%     5i + 7 & \answer{7} & \answer{5} 
+%     \\
+%     2+ 5i + \pi & \answer{2+\pi} & \answer{5} 
+%     \\
+% \end{array}
+% $$
+% De getallen $42$ en $1+\pi$ zijn zuiver reële getallen, en $42i$ is een zuiver imaginair getal. 
+% \\
+% Van het complex getal $2+3i$ is het reëel deel $2$ en het imaginair deel $3$. 
+% \end{example}
+
+% Alternatief (test)
+% \begin{example} Volgende uitdrukkingen zijn allemaal complexe getallen:
+% $$
+% \begin{array}{lll c lll}
+% 2+3i & \Re(2+3i) = 2 & \Im(2+3i) = \answer{3} 
+% \\
+% 42 & \Re(42) = \answer{42} & \Im(42) = 0
+% \\
+% 42i & \Re(42i) = \answer{0} & \Im(42i) = \answer{42} 
+% \\
+% 1+\pi & \Re(1+\pi) = 1+\pi & \Im(1+\pi) =  0
+% \\
+% 1+i\sqrt{2} & \Re(1+i\sqrt{2}) = 1 & \Im(1+i\sqrt{2}) = \sqrt{2}
+% \\
+% \dfrac{1-i\sqrt{5}}{2}  & \Re(\dfrac{1-i\sqrt{5}}{2}) = \dfrac{1}{2} & \Im(\dfrac{1-i\sqrt{5}}{2}) = -\dfrac{\sqrt{5}}{2}
+% \\
+% \end{array}
+% $$
+
+% De getallen $42$ en $1+\pi$ zijn zuiver reële getallen, en $42i$ is een zuiver imaginair getal. 
+% \\
+% Van het complex getal $2+3i$ is het reëel deel $2$ en het imaginair deel $3$. 
+% \end{example}
+
+% Alternatief (test)
+% \begin{example} Volgende uitdrukkingen zijn allemaal complexe getallen:
+% \begin{multicols}{3}
+% \begin{enumerate}
+% \item $2+3i$ 				    % a
+% \item $42$   				    % b
+% \item $42i$  				    % c
+% \item $1+\pi$				    % d
+% \item $1+i\sqrt{2}$ 		    % e
+% \item $\dfrac{1-i\sqrt{5}}{2}$  % f
+% \end{enumerate}
+% \end{multicols}
+% De getallen $42$ en $1+\pi$ zijn zuiver reële getallen, en $42i$ is een zuiver imaginair getal. 
+% \\
+% Van het complex getal $2+3i$ is het reëel deel $2$ en het imaginair deel $3$. 
+% \end{example}
+
+
+\end{document}
+

@@ -1,0 +1,79 @@
+\documentclass{ximera}
+\input{../preamble}
+\addPrintStyle{..}
+\begin{document}
+	% Start specifieke settings:    
+	\author{Zomercursus KU Leuven}
+	\xmtitle{De hoofdstelling van de algebra}{In de complexe getallen heeft elke veelterm nulpunten}
+	% Start inhoud ximera 
+	
+	\label{xim:hoofdstelling_algebra}
+
+% OBSOLETE: zoe complexe_getallen_vergelijkingen
+
+\begin{proposition}[Hoofdstelling van de algebra (Stelling van Gauss)] \label{def:hoofdstelling}
+	
+	Een complexe veelterm van de $n$-de graad heeft steeds precies $n$ complexe nulpunten 
+	\\ (niet noodzakelijk allemaal onderling verschillend).
+	
+	Dus: voor een veelterm $a_nx^n+a_{n-1}x^{n-1}+ \cdots +a_2x^2+a_1x+a_0$ met coëfficiënten $a_i\in \C$
+	\\
+	bestaan er $z_1,z_2,\ldots,z_n \in \C,$ zo dat 
+	$$
+	a_nx^n+a_{n-1}x^{n-1}+ \cdots +a_2x^2+a_1+a_0=a_n(x-z_1)(x-z_2)\cdots (x-z_n)
+	$$ 
+	Of: er bestaan $z_1,z_2,\ldots,z_n \in\C$ die oplossingen (of wortels) zijn van de vergelijking
+	$$
+	a_nx^n+a_{n-1}x^{n-1}+ \cdots +a_2x^2+a_1x+a_0=0
+	$$
+	( dus waarvoor $a_nz_i^n+a_{n-1}z_i^{n-1}+ \cdots +a_2z_i^2+a_1x+a_0=0$)
+\end{proposition}
+
+
+Deze stelling is een boeiend resultaat.  Kinderen die voor het eerst
+over getallen leren, werken met natuurlijke (positieve gehele)
+getallen: $0,1,2,3,\ldots$ Op een bepaald ogenblik blijkt het elegant
+te zijn om ook negatieve getallen in het plaatje toe te laten:
+$-1,-2,-3,\ldots$. Hierdoor krijgen bewerkingen als  '$3$ min $7$' ook een oplossing.  Iets gelijkaardigs
+gebeurt als we breuken (of rationale getallen) toelaten: ook '$3$
+gedeeld door $7$' wordt als getal aanvaard. Over de uitbreiding van
+rationale getallen naar re\"ele getallen valt veel te zeggen, waar we
+nu niet op ingaan. De hoofdstelling van de algebra zegt dat er
+iets strafs gebeurt bij de stap van re\"ele naar complexe getallen.
+Bij de re\"ele getallen bestaat de vierkantswortel uit $-1$ niet. Bij
+de complexe getallen voeren we die vierkantswortel toch in. D.w.z. we
+geven hem een naam '$i$'. Of om preciezer te zijn, eigenlijk zijn er
+twee vierkantswortels uit $-1$, namelijk $i$ en $-i$. Of nog anders
+gezegd, geven we een naam aan de (binnen de re\"ele getallen niet
+bestaande) oplossingen van de veeltermvergelijking $x^2+1=0$. De
+veelterm $x^2+1$ kan dan geschreven worden als $(x-i)(x+i)$.
+
+De hoofdstelling van de algebra stelt nu dat door op deze manier $i$ in
+te voeren niet alleen de veelterm $x^2+1$ te schrijven is (men zegt, te
+'factoriseren' is) als een product van eerstegraadsveeltermen, maar dat
+meteen elke $n$-de graadsveelterm, zelfs met complexe co\"effici\"enten, te
+schrijven is als een product van eerste graadsveeltermen. 
+
+De gevolgen van deze stelling laten zich voelen tot in heel wat
+toepassingen. Bij de studie van lineaire differentiaalvergelijkingen
+en differentievergelijkingen, bij de studie van trillingen of golven
+of elektrische kringen (We noemen slechts enkele van een hele reeks
+aan mekaar verwante toepassingen), blijken dit soort
+veeltermvergelijkingen voor te komen, en blijkt de theorie heel
+elegant te formuleren als men complexe getallen toelaat. Ook de
+exponenti\"ele vorm blijkt hier van nut, omdat deze onmiddellijk duidelijk
+maakt hoe sinuso\"idale verschijnselen zoals trillingen, wiskundig heel
+verwant zijn met exponenti\"ele verschijnselen.
+
+We besluiten met een opmerking over de soms afschrikkende naamgeving
+van complexe getallen. Complex heeft de bijklank van 'ingewikkeld'
+maar in oorsprong betekent 'complex getal' gewoon 'samengesteld
+getal', d.w.z. te beschrijven met twee re\"ele getallen. (We merken
+wel op dat het vaak nuttig is over een complex getal te denken als 1
+wiskundig object). Ook de benaming 'imaginair deel' roept soms
+vragen op. Maar het bovenstaande zou moeten duidelijk maken dat die
+'imaginaire' getallen niet denkbeeldiger of schimmiger zijn dan
+bijvoorbeeld negatieve getallen.
+
+\end{document}
+

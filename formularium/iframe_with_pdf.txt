@@ -1,0 +1,61 @@
+\documentclass{ximera}
+\input{../preamble}
+\input{../preambles/tcolorbox.tex}
+%\usepackage{svg}
+\addPrintStyle{..} 
+
+%
+% Generic wrapper around PDF-only pages: creates a page with an svg/png of the PDF (assumed to be one page?)
+%
+% !! THIS FILE IS CALLED iframe_with_pdf.txt; ALL OTHER VERSIONS ARE TO BE symlinks !!
+% 
+% Usage: 
+%  * symlink this page to mydoc.tex
+%  * create a file mydoc_pdf.tex   this file wil be skipped by 'bake', there will be no html-version; thus, it can contain constructs that fail in htlatex
+%  * make sure mydoc_pdf.pdf gets into ../formularium (or \relpath if set ...); this is done by build.sh     
+%  * make sure the pdf is converted to .svg (or potentiallly also .png ...,); this is done by build.sh
+%
+
+% Provide default title and label (\wraptitle can be specified in xourse ...)
+% Thus: by default both \label and title are set to the filmename (of the symlink, ie mydoc in the case above)
+%
+% For the PDF-version, you can overwrite this in the xourse ...
+%
+\providecommand{\wrapfile}{\currfilebase}
+\providecommand{\wraptitle}{\currfilebase}
+
+\providecommand{\relpath}{../formularium/}
+%\providecommand{\relpath}{./}
+\begin{document}
+
+\printactivityqrcodefalse     % would cause emty pages (ie, page with only qrcode); to be set BEFORE \xmtitle ...
+\printactivitytitlefalse      % would cause empty p (ie with only title)
+
+    \author{Wim Obbels}	
+    \pdfOnly{
+    \xmtitle{Overzicht \wraptitle}{}
+    }
+    \begin{onlineOnly}
+    \xmtitle{Overzicht \detokenize{\wraptitle}}{}
+    \end{onlineOnly}
+    \label{wrap:\wrapfile}
+%
+%
+\pdfOnly{%
+\includepdf[landscape,scale=0.825,offset=3cm -3.2cm,pagecommand={\thispagestyle{otherpage}}]{\relpath\wrapfile_pdf}
+%   \begin{landscape}%  
+% 
+%      %  \includegraphics[height=\textheight]{\relpath\wrapfile_pdf}
+%      % \newpage
+%    \vspace*{-1cm}%
+%    \makebox[\linewidth]{%
+%        \includegraphics[height=1.09\textheight]{\relpath\wrapfile_pdf}%
+%    }%
+%   \end{landscape}%  
+}
+\onlyOnline{
+    \HCode{<div class="image-environment image-pdf" role="img">}    % hack to get full-width ...?
+    \includegraphics{\relpath\wrapfile_pdf.pdf}
+    \HCode{</div>}
+}
+\end{document}

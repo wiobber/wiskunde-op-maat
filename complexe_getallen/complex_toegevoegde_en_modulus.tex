@@ -1,0 +1,102 @@
+\documentclass{ximera}
+\input{../preamble}
+\addPrintStyle{..}
+\begin{document}
+	\author{Zomercursus KU Leuven}
+	\xmtitle{De modulus en complex toegevoegde}{}
+	\label{xim:complex_toegevoegde}
+
+
+\begin{definition}[Modulus of absolute waarde van een complex getal] \ 
+	
+De \textit{modulus} van een complex getal $z=a+bi$, genoteerd $|z|$, is het \textit{positief reëel} getal 
+$$
+|z| \perdef |a+bi| \perdef \sqrt{a^2+b^2}
+$$
+De modulus is meetkundig de \textit{de afstand tot de oorsprong} en dus ook de \textit{lengte van de vector} $\vec{z}$.
+\end{definition}
+
+	\begin{image}
+	\begin{tikzpicture}[scale=5]%,cap=round,transform canvas={scale=0.5}]
+	
+	\tikzmath{\hoek = 30; \myc = cos(\hoek); \mys = sin(\hoek); 
+		\hoekb = 20;}
+	
+	% Goniometrische cirkel
+	%	\draw (0,0) circle (1cm);
+	\draw[->] (-0.1,0) -- (1,0) node[above] {$\Re(z)$};
+	\draw[->] (0,-0.1) -- (0,0.8) node[below right] {$\Im(z)$};
+	
+	\draw[color=blue,thick] (0:0)  -- node[below right] {\small$|z|=\sqrt{a^2+b^2}$} (\hoek:1); 
+	%
+	\draw[color=black] (\hoek:1) node[name=P,circle, fill=black, radius=1pt,scale=0.8] {} node [yshift=1pt,above] {$z=a+bi$} ;  
+	%
+	\draw[dashed] ({cos(\hoek)},0) node[circle, fill=black, radius=1pt,scale=0.5] {} node[below] {$a$} -- (P);
+	\draw[dashed] (0,{sin(\hoek)}) node[circle, fill=black, radius=1pt,scale=0.5] {} node[left] {$b$} -- (P);
+	
+	\end{tikzpicture}
+\end{image}
+
+De modulus van complexe getallen heeft volgende eigenschappen:
+
+\begin{proposition}[Eigenschappen modulus]\label{eig:complexe_modulus_extra}
+Voor complexe getallen $z,z_1,z_2\in \C$ geldt
+\begin{xmmulticols}
+\begin{enumerate}
+\item $|z|$ is de afstand van $z$ tot de oorsprong
+\item $|z_1-z_2|$ is de afstand tussen $z_1$ en $z_2$
+\item $|z_1 \cdot z_2|= |z_1|\cdot |z_2|$
+\item $|z|=0 \iff  z=0 $
+\item $\displaystyle \left| \frac{1}{z}\right|= \frac{1}{|z|}$
+\item $\left| \displaystyle \frac{z_1}{z_2}\right|=\displaystyle \frac{|z_1|}{|z_2|}$
+\item \important{|z_1+z_2| \leq |z_1|+|z_2|}
+
+\end{enumerate}
+\end{xmmulticols}
+LET OP: in het algemeen geldt niet \xcancel{$|z_1+z_2| = |z_1|+|z_2|$} (want $0= |1+(-1)| \neq |1|+|-1| = 2)$
+
+\end{proposition}
+
+ 
+\begin{definition}[Complex toegevoegde]\ 
+	
+De \textit{complex toegevoegde} een complex getal $z=a+bi$  , genoteerd als $\overline{z}$, is 
+$$
+\overline{z}\;\perdef\;\overline{a+bi}\;\perdef\; a-bi
+$$
+We noemen $z$ en $\overline z$ \textbf{complex toegevoegd} (aan elkaar), en beide zijn elkaars spiegeling over de $x$-as.
+
+Soms noteert men ook $z^*$ in plaats van $\overline{z}$
+\end{definition}
+
+
+\begin{proposition}[Eigenschappen complex toegevoegde] \ 
+	
+Zij $z=a+bi,z_1,z_2\in \C$, en $n\in\N$. Dan geldt
+\begin{enumerate}
+\item $\overline{z_1+z_2}=\overline{z_1}+\overline{z_2}$
+\item $\overline{z_1 \cdot z_2}=\overline{z_1}\cdot\overline{z_2}$
+\item $|z|=|\overline{z}|=|-z|$
+
+\item $z\cdot\overline{z}=(a+bi)(a-bi)= a^2+b^2=|z|^2 = |\overline{z}|^2 $
+% \item $|z|^2 = |\overline{z}|^2 = a^2+b^2 \in\Rplus$
+\item $\overline{\:\overline z\:}=z\qquad$ 
+
+\item $z=\overline{z} \iff z$ is een reëel getal (dus $b=0$, en $z=a$)
+
+\item $z+ \overline{z}=2a$ \quad (de som van twee complex toegevoegden is zuiver reëel)
+\item $z- \overline{z}=2bi$ \quad (het verschil van twee complex toegevoegden is zuiver imaginair)
+\item $z\cdot\overline{z}=a^2+b^2$ \quad (het product van twee complex toegevoegden is zuiver reëel en positief) 
+
+
+\item $\overline{z^{\:n}}= \displaystyle \overline{z}^{\:\:n}$
+\item \important{z^{-1} = \frac{\overline{z}}{|z|^2}} en dus \important{\frac{1}{a+bi} = \frac{a-bi}{a^2+b^2}}
+
+\item $\overline{\left(\frac{1}{z}\right)}=\frac{1}{\overline{z}}$  (en dus geldt ook $\overline{z^{-\:n}}= (\overline{z})^{\:-n}$)
+\item $\displaystyle{\overline{\left(\frac{z_1}{z_2}\right)}=\frac{\overline{z_1}}{\overline{z_2}}}$
+%\item als $z_1$ en $z_2$ complex toegevoegd zijn (dus $z_2=\overline{z_1}$) dan is $ |z_1|^2=|z_2|^2=z_1\cdot z_2 $.
+\end{enumerate}
+\end{proposition}
+
+\end{document}
+

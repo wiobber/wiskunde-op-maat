@@ -1,0 +1,103 @@
+\documentclass{ximera}
+\input{../preamble}
+\addPrintStyle{..}
+\begin{document}
+	\author{Zomercursus KU Leuven}
+	\xmtitle{Vergelijkingen over de complexe getallen}{}
+	
+	\label{xim:complexe_getallen_vergelijkingen}
+    
+Een belangrijke motivatie om de verzameling $\C$ van de \hyperref[xim:complexe_getallen]{complexe getallen} in te voeren was het oplossen van de vergelijking $x^2+1=0$. Dat bleek mogelijk door aan de reële getallen een nieuw 'getal' $i$ toe te voegen dat \textit{per definitie} een oplossing is van de vergelijking $x^2+1=0$. Er geldt dus \textit{per definitie} dat $i$ een getal is zodat  $i^2=-1$. We onderzoeken hier of we nu ook andere veeltermvergelijkingen kunnen oplossen die dat niet waren in $\R$. Het resultaat is spectaculair, en is bevat in de zogenaamde Hoofdstelling van de algebra:
+
+\begin{theorem}[Hoofdstelling van de algebra (Stelling van Gauss)]\nl
+\textit{Elke} veeltermvergelijking (van graad minstens 1) is oplosbaar over de complexe getallen.
+\end{theorem}
+
+\begin{remark}\nl
+\begin{itemize}
+\item er moet natuurlijk wel een echte vergelijking zijn: volgens de definitie van veeltermen is $5$ immers een veelterm (van graad 0), maar de vergelijking $5=0$ heeft toch geen oplossingen. De Hoofdstelling zegt dat de constante veeltermen de enige zijn die geen nulpunten hebben over de complexe getallen.
+\item je kan de stelling ook formuleren met nulpunten van veeltermen in plaats van oplossingen van vergeljkingen: elke niet-contsante veelterm heeft minstens één nulpunt over de complexe getallen.
+%\item de \textit{graad} van een veeltermvergelijking is de hoogste graad waarmee de onbekende voorkomt in die vergelijking. Bijvoorbeeld is $x^3+x^2+x+1=0$ van de derde graad, $x^5 - 3x +  2 = 0$ van de vijfde, $x^{2020} = 2020$ van de 2020-ste graad en zo verder. 
+\item Als we een veelterm $p(x)$ kunnen schrijven als $p(x) = (x-x_1)q(x)$, met $x_i\in\C$, dan is $x_1$ duidelijk een oplossing van de vergelijking $p(x)=0$, want  $p(x_1) = (x_1-x_1)q(x_1)\perinderdaad 0$). Men kan via het algoritme van de \hyperref[xim:euclidische_deling]{Euclidische deling} aantonen dat ook het omgekeerde geldt: als voor een veelterm $p(x)$ geldt dat $p(a)=0$, dan bestaat er altijd een veelterm $q(x)$ zodat $p(x)=(x-a)q(x)$. Als $p(x)$ graad $n$ heeft, dan heeft  $q(x)$ graad $n-1$. Als $n-1>0$, dan heeft volgens de Hoofdstelling ook $q(x)=0$ een oplossing, zeg $x_2$, en bestaat er dus een veelterm $q_2(x)$ zodat $q(x) = (x-x_2)q_2(x)$. Door deze procedure te herhalen krijgen we:
+\begin{proposition}
+Elke veelterm  $p(x)=\sum_{i=0}^n a_ix^i$ kan ontbonden worden in lineaire factoren als
+$$
+p(x)=\sum_{i=0}^n a_ix^i = a_n\prod_{i=1}^n (x-x_i)
+$$
+
+Een equivalente formulering is:
+
+Elke veelterm van graad $n$ heeft precies $n$ (niet noodzakelijk verschillende) nulpunten.
+\end{proposition}
+Elke veelterm kan dus geschreven worden als een \textit{som} van machten in $x$ (per definitie) of als \textit{product} van uitdrukkingen $x-x_1$.
+\item de stelling niet zegt dat deze $n$ oplossingen onderling verschillend zijn: de vergelijking $x^2 = 0$ heeft als het ware 'twee keer' de oplossing $x=0$, en $x^2+-2x+1 = (x-1)^2 = 0$ heeft 'twee keer' de oplossing $x=1$. 
+\item de stelling geldt niet alleen voor vergelijkingen met reële coëfficiënten, maar ook voor vergelijkingen met complexe coëfficiënten. Er bestaan dus $5$ complexe getallen $x$ waarvoor $ix^5 +2x^3 +2i = 0$. 
+\item het bewijs van deze stelling is niet eenvoudig, en gebruikt tamelijk geavanceerde eigenschappen van limieten en  reële getallen.
+\item de stelling zegt alleen iets over het \textit{bestaan} van oplossingen. Ze geeft geen methode om de oplossingen ook effectief te berekenen.
+\end{itemize}
+\end{remark}
+
+We bekijken concreet de vierkantsvergelijkingen, dus de veeltermvergelijkingen van de tweede graad
+$$
+ax^2 + bx + c = 0 \quad\text{ met } a\neq 0
+$$
+
+De Hoofdstelling van de algebra zegt dat vergelijkingen van graad twee altijd twee oplossingen hebben, waarbij we mogelijk één oplossing 'twee keer moeten tellen'.
+
+De zogenaamde discriminant is per definite het getal $D = b^2 - 4ac$. Over de reële getallen beweerden we dat de vergelijking oplosbaar was in het geval $D > 0$ of $D = 0$, en dat er geen oplossingen waren voor $D < 0$. Over de complexe getallen zijn er echter \textit{altijd} oplossingen:
+
+%Dan hadden we de volgende opties:
+%\begin{itemize}
+%	\item $D > 0$: de vergelijking heeft twee verschillende oplossingen,
+%	\item $D = 0$: de vergelijking heeft één unieke oplossing,
+%	\item $D < 0$: de vergelijking heeft \textit{geen reële} oplossingen
+%\end{itemize}
+
+\begin{proposition}[Oplossen van vierkantsvergelijkingen over de complexe getallen]\nl
+De twee oplossingen $x_1$ en $x_2$ van een vierkantsvergelijking $ax^2 + bx + c = 0$ zijn
+	$$ 
+	x_1 = \frac{-b + \sqrt{b^2 - 4ac}}{2a}, \quad	x_2 = \frac{-b - \sqrt{b^2 - 4ac}}{2a}
+	$$
+\end{proposition}
+
+\begin{remark} \nl
+\begin{itemize}
+\item Merk op dat $a\neq 0$ (want als $a=0$ is dit geen vierkantsvergelijking maar een lineaire vergelijking $bx+c=0$), en dat er dus geen probleem is met mogelijk 'delen door nul'.
+
+\item Afhankelijk van de waarde van de discriminant  $D = b^2 - 4ac$  geldt:
+\begin{itemize}
+	\item $D \neq 0$: de vergelijking heeft twee verschillende oplossingen, namelijk
+	$$ 
+	x_1 = \frac{-b + \sqrt{D}}{2a}, \quad	x_2 = \frac{-b - \sqrt{D}}{2a}
+	$$
+	\item $D = 0$: de vergelijking heeft één unieke oplossing, namelijk
+	$$
+	x_{1,2} = \frac{-b}{2a}
+	$$
+\end{itemize}
+\item Als $a,b,c$ \textit{reële} getallen zijn, dan is ook de discriminant $D$ reëel en heeft het zin om over het \textit{teken} van $D$ te spreken. Als $D$ dan negatief is, is $\sqrt{D} = i\sqrt{|D|}$ zuiver imaginair, en zijn de wortels $x_1$ en $x_2$ complex.
+\end{itemize}
+\end{remark}
+
+
+In het voorbeeld $x^2 + 1 = 0$ is $a = 1$, $b=0$ en $c = 1$. Dus is $D = b^2 - 4ac = -4 < 0$, en de oplossingen zijn volgens de discriminantmethode 
+$$
+x_1 = \frac{-b + \sqrt{D}}{2a} = \frac{0 + 2i}{2} = i, \ \ x_2 = \frac{-b - \sqrt{D}}{2a} = \frac{0 - 2i}{2} = -i \, .
+$$
+Dit komt overeen met de oplossingen die we wisten vanuit de definitie van $i$. 
+
+%Ga zelf na aan de hand van de discriminantmethode dat $D < 0$ voor de vergelijking $x^2 + 4 = 0$, en dat de oplossingen $x=2i$ en $x=-2i$ zijn. 
+
+\begin{xmuitweiding}[Complexe oplossingen van reële vierkantsvergelijkingen zijn elkaars complex toegevoegde]
+Een vierkantsvergelijking met reële coëfficiënten heeft steeds twee oplossingen. Als de oplossingen reëel zijn, dan kunnen ze verschillend zijn van elkaar (geval $D < 0$) of gelijk zijn aan elkaar (geval $D = 0$). Als de oplossingen complex zijn, dan zijn ze altijd verschillend.
+
+Er kan nog meer gezegd worden over deze complexe oplossingen. Kijk eens terug naar de twee voorbeelden van vierkantsvergelijkingen waarbij complexe oplossingen opduiken: $x^2 + 1 = 0$ en $x^2 + 4 = 0$. Beide oplossingen waren niet zomaar verschillend van elkaar: ze waren elkaars complex toegevoegde! Dit blijkt \textit{altijd} het geval te zijn: als in het geval $D < 0$ het getal $z \in \C$ een oplossing is, dan is $\overline{z}$ de andere oplossing.
+
+Dit is natuurlijk geen wonder: de vergelijkingen van de discriminantmethode geven voor het geval $D < 0$ de oplossingen
+$$
+x_{1,2} = \frac{-b \pm \sqrt{D}}{2a} \, .
+$$ 
+De twee oplossingen verschillen van teken bij de wortel van de discriminant, en dat is net de enige plek waar een imaginaire eenheid tevoorschijn komt. 
+\end{xmuitweiding}
+\end{document}
+

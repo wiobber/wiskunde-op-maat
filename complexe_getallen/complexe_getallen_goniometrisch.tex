@@ -1,0 +1,253 @@
+\documentclass{ximera}
+\input{../preamble}
+\addPrintStyle{..}
+\begin{document} 
+	\author{Zomercursus KU Leuven}
+	\xmtitle{De goniometrische schrijfwijze van complexe getallen}{}
+	
+	\label{xim:complexe_getallen_polair}  % goniometrisch ???
+
+
+Een punt $z$ in het vlak kan volledig bepaald worden door zijn projecties op de $x$-as en de $y$-as. In het complexe vlak noemen we de $x$-as ook de \textit{reële} as en de $y$-as de \textit{imaginaire} as. We schrijven een complex getal als $z=a+bi$. Er is echter een alternatieve manier via zogenaamde \hyperref[xim:poolcoordinaten]{poolcoördinaten} die gebruik maken van  $r=|z|$, de afstand tot de oorsprong, en $\theta$, de hoek die de overeenkomstige vector maakt met de positieve reële as. 
+Het koppel $(r,\theta)$ zijn de \textit{poolcoördinaten} van het punt $z$. In de context van complexe getallen noemen we $r=|z|$ de \textbf{modulus} en $\theta$ het \textbf{argument} (ook wel \textit{fase} genoemd). De hoek $\theta$ wordt gemeten in radialen, in tegenwijzerzin, en is slechts op een veelvoud van $2\pi$ na bepaald.
+
+Deze schrijfwijze is bijvoorbeeld erg handig bij vermenigvuldigingen en machten van complexe getallen, want die worden veel eenvoudiger.
+
+We tekenen het complexe getal $z$ met cartesische coördinaten en met poolcoördinaten: 
+%Verder zullen we voor een complex getal $z = a + bi$ het verband tonen tussen enerzijds het reëel deel $a$  en imaginair deel $b$ en anderzijds de modulus $r$ en het argument $\theta$. Dat  kan afgeleid worden uit de stelling van Pythagoras en de definities van de goniometrische getallen. 
+
+	\begin{image}%[\textwidth]
+	\begin{tikzpicture}[scale=5]%,cap=round,transform canvas={scale=0.5}]
+	
+	\tikzmath{\hoek = 30; \myc = cos(\hoek); \mys = sin(\hoek); 
+		\hoekb = 20;}
+	
+	% Goniometrische cirkel
+	%	\draw (0,0) circle (1cm);
+	\draw[->] (-0.1,0) -- (1.3,0) node[above] {Re$(z)$};
+	\draw[->] (0,-0.1) -- (0,0.9) node[below right] {Im$(z)$};
+	
+	\draw[color=blue,thick] (0:0)  -- node[right] {\small$r=|z|=\sqrt{a^2+b^2}$} (\hoek:1); 
+	%
+	\draw[color=black] (\hoek:1) node[name=P,circle, fill=black, radius=1pt,scale=0.8] {} node [yshift=1pt,above,align=center] {$z=a+bi$\\$=r(\cos\theta+i\sin\theta)$} ;  
+	%
+	\draw[dashed] ({cos(\hoek)},0) node[circle, fill=black, radius=1pt,scale=0.5] {} node[below] {\color{red}$a=r\cos\theta$} -- (P);
+	\draw[dashed] (0,{sin(\hoek)}) node[circle, fill=black, radius=1pt,scale=0.5] {} node[left] {\color{red}$b=r\sin\theta$} -- (P);
+	\draw[color=blue, ->] (0.3,0) arc (0:\hoek:0.3cm) node [midway,right] {$\theta$ \Tmet $\tan\theta = \frac ba$};   
+	
+	\end{tikzpicture}
+\end{image}
+
+
+%Indien $z=0$, stellen we per conventie $\theta=0+2k\pi, \; \mbox{met } k\in \Z$.
+%\\ De hoek $\theta$ voor een gegeven $z$ is niet uniek bepaald.
+%Wanneer we bij $\theta$ een geheel veelvoud van $2\pi$ bijtellen
+%vinden we hetzelfde punt en dus hetzelfde complex getal terug.
+
+% Er wordt niet gezegd wat r en theta zijn in deze definitie.
+%\begin{definition}
+%Een \textbf{goniometrische} (ook \textbf{polaire}) \textbf{voorstelling} van een complex getal $z = a+bi\in\C$ is 
+%$$ 
+%\important{z = r(\cos\theta+i\sin\theta)}. 
+%$$
+%waarbij de sinus en cosinus \textit{niet} worden uitgerekend.
+%
+%Hierbij is $r=|z|$ de \textbf{modulus} en $\theta$ het \textbf{argument} (ook \textbf{fase}).
+%\end{definition}
+
+ % Merk dus op dat aan de hand van de modulus $r$ en het argument $\theta$ van een complex getal $z$, het reële deel van $z$ gelijk is aan $a = r\cos \theta$, en het imaginaire deel gelijk is aan $b = r\sin \theta$.
+
+%Men noteert dit soms ook als $r\angle \theta$.\\
+
+Omdat $a=r \cos \theta$ en $b=r \sin \theta$ kunnen we $z=a+bi$ ook schrijven als $z=r(\cos\theta+i\sin\theta)$. Dit noemen we de \textbf{goniometrische} (ook \textbf{polaire}) \textbf{schrijfwijze} van het complex getal $z$. We noemen $z=a+bi$ de \textbf{cartesische schrijfwijze}.
+
+
+
+\begin{remark}\nl
+    
+    \begin{itemize}
+        \item Omdat $\theta$ niet uniek bepaald is, heeft elk complex getal $z = r(\cos\theta+i\sin\theta)$ \textit{oneindig veel goniometrische schrijfwijzes} $z = r\left(\cos(\theta+k2\pi)+i\sin(\theta+k2\pi) \right)$, met $k\in\Z$. Vaak wordt er echter voor gekozen om $\theta$ tussen 0 en $2\pi$ te geven: we kunnen ons sneller voorstellen waar de hoek $\frac{5\pi}{4}$ ligt dan de hoek $\frac{1093\pi}{4}$. 
+        \item Twee complexe getallen in goniometrische schrijfwijze zijn gelijk aan elkaar als ze dezelfde modulus hebben, en hun argument gelijk is op een veelvoud van $2\pi$ na.
+        %$$
+        %r_1(\cos\theta_1+i\sin\theta_1)=r_2(\cos\theta_2+i\sin\theta_2)\quad\Leftrightarrow
+        %\quad r_1=r_2 \; \mbox{ en }\; \exists k\in \Z:\theta_1=\theta_2+2k\pi. 
+        %$$
+    \end{itemize}
+    
+\end{remark}
+
+\begin{exercise}\nl
+    Geef de goniometrische schrijfwijze van volgende complexe getallen waarvan het argument gemakkelijk grafisch gevonden kan worden:
+    \begin{question} $z=1 $
+        \begin{oplossing}
+          Voor $z=1 $ is de modulus $1$ en het argument $0$, dus de goniometrische schrijfwijze is $$z= \cos 0 + i\sin 0 \Tof z= \cos 2\pi + i\sin 2\pi.$$ 
+        \end{oplossing}
+    \end{question}
+\begin{question} $z=i $
+    \begin{oplossing}
+     Voor $z=i $ is de modulus $1$ en het argument $\frac{\pi}{2}$, dus de goniometrische schrijfwijze is $$z= \cos\frac{\pi}{2} + i \sin \frac{\pi}{2}.$$   
+    \end{oplossing}
+\end{question}
+    \begin{question} $z=1+i$
+        \begin{oplossing}
+            Voor $z=1+i$ is de modulus $\sqrt{2}$ en het argument $\frac{\pi}{4}$, dus de goniometrische schrijfwijze is $$z= \sqrt{2}(\cos \frac{\pi}{4}+i\sin\frac{\pi}{4}).$$  
+        \end{oplossing}
+    \end{question}
+    \begin{question} $z=\frac{\sqrt2}{2}+i\frac{\sqrt2}{2}$
+        \begin{oplossing}
+            Voor $z=\frac{\sqrt2}{2}+i\frac{\sqrt2}{2}$ is de modulus $1$ en het argument $\frac{\pi}{4}$, dus de goniometrische schrijfwijze is $$z = \cos \frac{\pi}{4}+i\sin\frac{\pi}{4}.$$
+        \end{oplossing}
+    \end{question}
+    
+    Merk op: bij het opschrijven van de goniometrische schrijfwijze met concrete getallen moet je de $\sin$ en $\cos$ laten staan. Als je die toch zou uitrekenen, krijg je immers terug de cartesische schrijfwijze.
+\end{exercise}
+
+
+\begin{basicSkip}
+Je kan verder experimenteren met volgende applet: Je kan $z= a+bi=r(\cos \theta+ i  \sin \theta)$ verplaatsen en telkens $a=\text{Re}(z)$, $b=\text{Im}(z)$, $r=|z|$ en $\theta$ aflezen.
+
+\geogebra{NwzgUCQG}{887}{528}
+\end{basicSkip}
+
+
+
+Het blijkt dat sommige berekeningen eenvoudiger zijn in de cartesische schrijfwijze en andere in de goniometrische schrijfwijze. Om te switchen tussen beide schrijfwijzes herhalen we de transformatieformules van \hyperref[xim:poolcoordinaten]{poolcoördinaten}:
+
+\begin{proposition}[Transformatieformules cartesische en goniometrische  schrijfwijze]\label{eig:transformatie_complexe_getallen} \nl 
+	
+	Een complex getal $z$ met goniometrische schrijfwijze $r(\cos \theta + i\sin\theta)$ heeft als cartesische schrijfwijze $a+bi$ met:
+	\begin{center}
+		\important{a =  r \cos \theta}\\
+		\important{b =  r \sin \theta}
+	\end{center}
+	Een complex getal $z$ met cartesische schrijfwijze $a+bi$ heeft als goniometrische schrijfwijze $r(\cos \theta + i\sin\theta)$ met:
+	\begin{align*}
+	\important{r = \sqrt{a^2+b^2}} \\
+	\important{\cos\theta  = \dfrac{a}{\sqrt{a^2+b^2}}}\\
+	\important{\sin\theta  = \dfrac{b}{\sqrt{a^2+b^2}}}
+	\end{align*}
+\end{proposition}
+
+
+\begin{remark}\nl
+	
+	Als $a \neq 0$ kunnen we de tweede vergelijking delen door de eerste (waardoor de vierkantswortel wegvalt) en krijgen we
+	$$ 
+	\tan \theta = \frac{b}{a}  \quad \Tals a \neq 0
+	$$ 
+	Als $a >0$ dan is $\theta$ een hoek in het 1ste of het 4de kwadrant en is dus per definitie van de \hyperref[xim:cyclometrische_functies]{boogtangens }
+	$$
+	\theta  =  \bgtan \left(\frac{b}{a}\right) \quad \Tals  a>0
+	$$
+	Als $a<0$ dan is $\theta$ een hoek in het 2de of het 3de kwadrant en dan geldt
+	$$
+	\theta  =  \bgtan \left(\frac{b}{a}\right) + \pi \quad \Tals  a<0
+	$$
+	Als $a=0$, dan ligt $z=a+bi$ op de $y$-as en geldt
+	\begin{align*}
+	\theta & =  \frac{\pi}{2}  \quad\Tals a=0, b > 0\\
+	\theta & = -\frac{\pi}{2} \quad\Tals a=0, b < 0
+	\end{align*}
+	
+	Samengevat geeft dit voor $\theta$:
+	$$
+	\theta = \begin{cases}
+	\bgtan \frac{b}{a}       & \Tals a>0        \\
+	\pi + \bgtan \frac{b}{a} & \Tals a<0        \\   % met \pi+... lopen de breuken elkaar minder in de weg dan met ...+pi!
+	\frac{\pi}{2}            & \Tals a=0, b > 0 \\
+	-\frac{\pi}{2}           & \Tals a=0, b < 0
+	\end{cases}
+	$$
+	\begin{basicSkip}
+Dit alles wordt ook uitgelegd in onderstaande video:
+
+\youtube{_qLKTopxSXc}
+\end{basicSkip}
+
+\end{remark}
+% Bron: SPOC Complexe Getallen https://tube.geogebra.org/material/iframe/id/NwzgUCQG/width/887/height/528/border/888888/rc/false/ai/false/sdz/false/smb/false/stb/false/stbh/true/ld/false/sri/false/at/auto
+
+
+
+\xmsection{Vermenigvuldiging van complexe getallen in goniometrische schrijfwijze}\nl
+
+In de goniometrische schrijfwijze is het niet eenvoudig om complexe getallen op te tellen: hiervoor is de cartesische schrijfwijze veel makkelijker, omdat we dan gewoon reëel en imaginair deel bij elkaar moeten optellen. Voor de vermenigvuldiging van complexe getallen is het andersom: daarvoor is er de volgende interessante formule voor de goniometrische schrijfwijze: 
+
+Als $z_1=r_1 (\cos \theta_1 + i \sin \theta_1 ) $ en $z_2 = r_2(\cos \theta_2 + i \sin \theta_2 )$ twee complexe getallen zijn, dan is
+\begin{align*}
+z_1\cdot z_2 &= r_1 (\cos \theta_1 + i \sin \theta_1 )\cdot r_2 (\cos\theta_2 + i \sin \theta_2 )\\
+             &= r_1 r_2 (\cos \theta_1 \cos \theta_2 - \sin \theta_1  \sin\theta_2 + i(\sin \theta_1 \cos \theta_2 + \cos \theta_1  \sin
+\theta_2 ))\\
+             &= r_1 r_2 ( \cos(\theta_1 + \theta_2) + i \sin(\theta_1 + \theta_2)) \, ,
+\end{align*}
+waarbij we in de laatste stap gebruik hebben gemaakt van de \hyperref[xim:goniometrie_formules]{som- en verschilformules}. 
+Dit betekent dat de moduli $r_i$ moeten worden vermenigvuldigd, en de argumenten $\theta_i$ moeten worden opgeteld.
+
+\begin{proposition}[Vermenigvuldiging van twee complexe getallen in goniometrische schrijfwijze]\label{eig:vermenigvuldiging_complexe_getallen}\nl
+	
+De \textit{modulus} van het product van twee complexe getallen is het \textit{product van de moduli} van die getallen.
+
+Het \textit{argument} van het product van twee complexe getallen is de \textit{som van de argumenten} van die getallen.
+\end{proposition}
+
+\begin{xmuitweiding}[Vermenigvuldiging van 2 complexe getallen grafisch uitgelegd]
+We kunnen de vermenigvuldiging met een complex getal ook zien als een soort van actie die we doen op punten in het vlak. Als we een bepaald complex getal $z = r(\cos\theta + i \sin \theta)$ fixeren, en eender welk complex getal vermenigvuldigen met die $z$, dan tellen we steeds $\theta$ bij het argument van het complex getal op, en vermenigvuldigen we de modulus van dat complex getal steeds met $r$.
+
+% Als je focust op het effect van vermenigvuldiging met één complex getal, krijg je %%% vind ik precies wat een vreemde zin?
+\begin{proposition}[Vermenigvuldiging met een complex getal in goniometrische schrijfwijze $z=r(\cos\theta + i\sin\theta)$]\nl
+	
+Vermenigvuldigen met $z = r(\cos\theta + i\sin\theta)$ betekent \textit{roteren} over een hoek $\theta$ en afstanden en lengtes \textit{herschalen} met een factor $r$.
+\end{proposition}
+
+Je kan experimenteren met deze voorstelling van de vermenigvuldiging door in onderstaande applet de complexe getallen $z_1$ en $z_2$ te verslepen, en dan via de vermenigvuldig-knop te zien hoe vermenigvuldigen met $z_2 = (r,\theta)$ inderdaad kan beschouwd worden als een \textit{rotatie} over een hoek $\theta$ gevolgd door een \textit{herschaling} met een factor $r$.
+
+\geogebra{i0Lbx90s}{893}{451}
+\end{xmuitweiding}
+
+\begin{xmuitweiding}[Inverse van een complex getal met poolcoördinaten]
+We zijn geïnteresseerd in het volgende probleem: stel dat je een complex getal $z$ hebt, met welk ander complex getal, zeg $w$, moet je $z$ vermenigvuldigen zodat het resultaat 1 geeft? Met andere woorden: hoe bepaal je de \textit{inverse} van een complex getal?
+
+Stel dat het complex getal $z$ zuiver reëel is, dus zodanig dat de cartesische schrijfwijze van $z$ van de vorm $z = a + 0i$ is. Dan is het makkelijk om te vinden wat de inverse is: door te vermenigvuldigen met $w = 1/a$ komen we op 1 uit. Het algemene geval is echter lastiger met cartesische coordinaten, 
+% als $z = a + bi$, en $w = c + di$, dan wordt de vergelijking $z\cdot w = 1$:
+%$$
+%z\cdot w = (a+bi)\cdot (c+di) = (ac -  bd) + (bc + ad)i = 1 + 0i \, .
+%$$
+%Dit komt neer op een stelsel van twee vergelijkingen in twee onbekenden:
+%$$
+%\begin{cases}
+%ac - bd &= 1 \\
+%bc + ad &= 0 
+%\end{cases}
+%$$
+maar zal makkelijker zijn met poolcoördinaten, aangezien het hier gaat over vermenigvuldigingen van complexe getallen. Als we de rekenregels voor het vermenigvuldigen van complexe getallen in goniometrische schrijfwijze in het achterhoofd houden, vinden we het volgende:
+
+\begin{proposition}
+Stel dat het complexe getal $z$ modulus $r$ en argument $\theta$ heeft. Dan is de inverse van $z$ het complexe getal met modulus $1/r$ en argument $-\theta$.  
+\end{proposition}
+
+Uiteraard bestaat de inverse dus niet voor het complex getal nul. Voor $z\neq 0$, met $(r, \theta)$ als poolcoördinaten, is de inverse inderdaad het complex getal $w$ met poolcoördinaten $\left(\frac{1}{r}, -\theta\right)$: de modulus van het product van complexe getallen is het product van de moduli, terwijl het argument van het product van complexe getallen de som van de argumenten is. Dus $z\cdot w$ heeft modulus 1, en argument 0: dit zijn precies de poolcoördinaten van het getal 1.
+\end{xmuitweiding}
+
+%Indien de cartesiaanse vorm gegeven is, kan de modulus bepaald worden met de stelling van Pythagoras, en de hoek $\theta$ in de rechthoekige driehoek met rechthoekszijden $|a|$ en $|b|$. Merk op dat voor $a<0$, het complex getal in het tweede of derde kwadrant ligt.  
+%Aangezien $\arctan$ per definitie steeds als resultaat een hoek in het interval $]-\pi/2,\pi/2[$ geeft, dient  in de uitdrukking voor het argument $\theta$ een term $\pi$ toegevoegd te worden om correct te zijn. 
+%Als $|a|$ of $|b|$ gelijk is aan 0, redeneer je niet in een driehoek, maar ligt het complex getal op \'e\'en van de assen en kan je het argument $\theta$ onmiddellijk aflezen op een figuur.
+
+
+% verdere inhoud over complexe getallen uit Zomercursus 201x in kwadratische_vergelijking/veeltermen/...
+
+%\begin{thebibliography}{9}
+%\bibitem{nieuwe delta} P. Gevers, J. Anseeuw, J. De Langhe, G. Roels, H. Vercauter,
+%\textit{Nieuwe Delta, 5/6 Complexe Getallen(6 - 8 uur)}, Leuven,
+%Wolters Plantyn, 1994.
+%\bibitem{Jennekens}E. Jennekens, G. Deen, \textit{Wiskunde '68, Wiskunde 5, Deel A, Matrices en
+%complexe getallen}, Antwerpen, De Sikkel, 1972.
+%\bibitem{Quaegebeur}
+%J. Quaegebeur, \textit{Basisbegrippen en basistechnieken uit de
+%wiskunde}, Leuven, Acco, 2004.
+%\bibitem{Croft}A. Croft and R. Davison, \textit{Mathematics for engineers}, Pearson Education Limited, third edition, 2008.
+%\end{thebibliography}
+%
+%\newpage
+
+\end{document}
+
