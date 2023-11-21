@@ -16,6 +16,9 @@ jobs:
             kpsewhich   --show-path=tex
             date
             type pdflatex
-            ls -al $HOM
-            pdflatex complexe_getallen/cmplx_norm.tex
+            ls -al $HOME
+            ldd xake || echo NOK
+            mkdir -p /root/texmf/tex/latex/ximeraLatex 
+            cp .ximera/* /root/texmf/tex/latex/ximeraLatex
+            pdflatex complexe_getallen/cmplx_norm.tex || echo NOK
             ./xake compilePdf complexe_getallen/cmplx_norm.tex
