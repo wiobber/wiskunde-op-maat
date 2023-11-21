@@ -10,6 +10,12 @@ jobs:
           run: |
             date
             pwd
+            id
             ls -al 
-            df -h
+            env
+            kpsewhich   --show-path=tex
+            date
+            type pdflatex
+            ls -al $HOM
+            pdflatex complexe_getallen/cmplx_norm.tex
             ./xake compilePdf complexe_getallen/cmplx_norm.tex
