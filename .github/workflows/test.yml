@@ -8,5 +8,8 @@ jobs:
         with:
           texlive_version: 2022
           run: |
-            apk add make
-            make
+            date
+            pwd
+            ls -al 
+            df -h
+            ./xake compilePdf complexe_getallen/cmplx_norm.tex
